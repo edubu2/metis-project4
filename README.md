@@ -1,3 +1,4 @@
 # Metis Data Science Bootcamp | Project 4
 
-## Analyzing the Impact of Bots on Political Discourse on Twitter
+## Analyzing the Impact of Bots on USA's Predidential Election Discourse on Twitter
+
