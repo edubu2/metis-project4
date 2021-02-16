@@ -10,3 +10,4 @@ ___
 ## Tech Stack
 
 * Twint (Twitter API)
+* spaCy (NLP)
