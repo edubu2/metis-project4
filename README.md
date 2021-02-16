@@ -6,3 +6,7 @@ Duration: 2 weeks
 
 (in progress)
 
+___
+## Tech Stack
+
+* Twint (Twitter API)
