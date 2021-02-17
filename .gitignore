@@ -2,3 +2,4 @@
 code/pickle/
 data/
 code/src
+__pycache__/
