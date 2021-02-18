@@ -9,5 +9,18 @@ Duration: 2 weeks
 ___
 ## Tech Stack
 
-* Twint (Twitter API)
-* spaCy (NLP)
+* Python3 Libraries
+  * scikit-learn
+  * Twint (Tweet database)
+  * NLTK
+
+* Other tools
+  * GCP Compute Engine (for VMs)
+  * Filezilla
+
+___
+## Navigating This Repository
+
+
+___
+## 
