@@ -73,10 +73,11 @@ def get_user_features(user_id):
             friends_acq_rate,
         ]
 
+    
     except:
         return np.nan
 
-    return account_features if len(account_features) == 14 else f"User not found"
+    return account_features if len(account_features) == 14 else np.nan
 
 
 def bot_or_not(twitter_handle):
@@ -130,3 +131,14 @@ def bot_proba(user_id):
         user = np.matrix(user_features)
         proba = np.round(xgb_model.predict_proba(user)[:, 1][0] * 100, 2)
         return proba
+
+    def is_verified(user_id):
+        """Returns 1 if user is verified; else 0."""
+        user_features = get_user_features(user_id)
+
+        try:
+            user = api.get_user(user_id)
+            return user.verified
+        else:
+            return np.nan
+        
