@@ -1,5 +1,7 @@
 import twint
 import time
+import nest_asyncio
+nest_asyncio.apply()
 
 print("Starting Biden tweets.")
 b = twint.Config()
