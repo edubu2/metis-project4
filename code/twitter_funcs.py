@@ -132,11 +132,11 @@ def bot_proba(user_id):
         proba = np.round(xgb_model.predict_proba(user)[:, 1][0] * 100, 2)
         return proba
 
-    def is_verified(user_id):
-        """Returns 1 if user is verified; else 0."""
-        try:
-            user = api.get_user(user_id)
-            return user.verified
-        except:
-            return np.nan
+def is_verified(user_id):
+    """Returns 1 if user is verified; else 0."""
+    try:
+        user = api.get_user(user_id)
+        return user.verified
+    except:
+        return np.nan
         
