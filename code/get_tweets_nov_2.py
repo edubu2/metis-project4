@@ -1,29 +1,45 @@
 import twint
 import time
 import nest_asyncio
+import datetime as dt
+import random
 nest_asyncio.apply()
 
-print("Starting Biden tweets.")
-b = twint.Config()
-b.Search = 'biden'
-b.Lang = 'en'
-b.Since = '2020-11-02'
-b.Until = '2020-11-03'
-b.Store_csv = True
-b.Output = f"../data/tweets/all_biden_nov_2.csv"
-twint.run.Search(b)
-print("Successfully scraped Biden tweets.")
+# -------
+def get_all_tweets_from_day(date, candidate='Trump'):
+    
+    f = "%Y-%m-%d"
+    lam_plus_1 = lambda x: (x + dt.timedelta(days=1)).strftime("%Y-%m-%d")    
+    
+    d = dt.datetime.strptime(date, f)
+    print(f"""\n Begin scraping {candidate}'s tweets on {d}\n""")
+    outfile = f"../data/tweets/all_{candidate.lower()}_{date}.csv"
 
-print("Starting Trump tweets.")
-time.sleep(300)
-t = twint.Config()
-t.Search = 'trump'
-t.Lang = 'en'
-t.Since = '2020-11-02'
-t.Until = '2020-11-03'
-t.Store_csv = True
-t.Output = "../data/tweets/all_trump_nov_2.csv"
+    # twint search query details
+    c = twint.Config()
+    c.Search = candidate
+    c.Lang = 'en'
+    c.Since = date
+    c.Until = lam_plus_1(d)
+    c.Store_csv = True
+    c.Output = outfile
+    c.Hide_output = True
 
-print("Successfully scraped Trump tweets.")
-
-twint.run.Search(t)
+    # run the search (manually interrupt when there are sufficient number of unique tweets in outfile)
+    timeout = time.time() + 60 * 3.5
+    while True:
+        time.sleep(1)
+        if time.time() > timeout:
+            break
+        try:
+            twint.run.Search(c)
+            print(f"Scraping complete. File: {outfile} created.")
+            return
+        except:
+            print("Error caught. Restarting.")
+            time.sleep(90)
+            continue
+    
+get_all_tweets_from_day('2020-11-02', candidate='Biden')
+time.sleep(10)
+get_all_tweets_from_day('2020-11-02', candidate='Trump')
