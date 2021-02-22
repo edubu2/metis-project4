@@ -134,11 +134,9 @@ def bot_proba(user_id):
 
     def is_verified(user_id):
         """Returns 1 if user is verified; else 0."""
-        user_features = get_user_features(user_id)
-
         try:
             user = api.get_user(user_id)
             return user.verified
-        else:
+        except:
             return np.nan
         
