@@ -26,7 +26,7 @@ def get_all_tweets_from_day(date, candidate='Trump'):
     c.Hide_output = True
 
     # run the search (manually interrupt when there are sufficient number of unique tweets in outfile)
-    timeout = time.time() + 60 * 3.5
+    timeout = time.time() + 60 * 3.5 * 60
     while True:
         time.sleep(1)
         if time.time() > timeout:
