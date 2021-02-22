@@ -21,7 +21,7 @@ auth = tweepy.OAuthHandler(api_key, api_secret_key)
 api = tweepy.API(auth)
 
 
-def get_user_features(screen_name):
+def get_user_features(user_id):
     """
     Input: a Twitter handle (screen_name)
     Returns: a list of account-level information used to make a prediction
@@ -30,7 +30,7 @@ def get_user_features(screen_name):
 
     try:
         # Get user information from screen name
-        user = api.get_user(screen_name)
+        user = api.get_user_id(user_id)
 
         # account features to return for predicton
         account_age_days = (datetime.now() - user.created_at).days
@@ -85,10 +85,10 @@ def bot_or_not(twitter_handle):
     Required: trained classification model (XGBoost) and user account-level info as features
     """
 
-    user_features = get_user_features(twitter_handle)
+    user_features = get_user_features(user_id)
 
     if user_features == "User not found":
-        return "User not found"
+        return np.nan
 
     else:
         # features for model
@@ -117,12 +117,12 @@ def bot_or_not(twitter_handle):
         return "Bot" if prediction == 1 else "Not a bot"
 
 
-def bot_proba(twitter_handle):
+def bot_proba(user_id):
     """
     Takes in a twitter handle and provides probability of whether or not the user is a bot
     Required: trained classification model (XGBoost) and user account-level info from get_user_features
     """
-    user_features = get_user_features(twitter_handle)
+    user_features = get_user_features(user_id)
 
     if user_features == "User not found":
         return np.nan
