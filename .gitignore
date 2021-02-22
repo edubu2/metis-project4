@@ -5,3 +5,5 @@ code/src
 __pycache__/
 code/secrets.py
 .DS_Store
+.vscode/
+src/
