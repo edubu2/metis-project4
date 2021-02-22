@@ -32,6 +32,7 @@ def get_all_tweets_from_day(date, candidate='Trump'):
         if time.time() > timeout:
             break
         try:
+            print(f'Beginning to scrape {candidate}')
             twint.run.Search(c)
             print(f"Scraping complete. File: {outfile} created.")
             return
