@@ -80,7 +80,7 @@ def get_user_features(user_id):
     return account_features if len(account_features) == 14 else np.nan
 
 
-def bot_or_not(twitter_handle):
+def bot_or_not(user_id):
     """
     Takes in a twitter handle and predicts whether or not the user is a bot
     Required: trained classification model (XGBoost) and user account-level info as features
@@ -115,7 +115,7 @@ def bot_or_not(twitter_handle):
 
         prediction = xgb_model.predict(user_df)[0]
 
-        return "Bot" if prediction == 1 else "Not a bot"
+        return "Bot" if prediction == 1 else np.nan
 
 
 def bot_proba(user_id):

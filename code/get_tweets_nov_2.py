@@ -41,6 +41,8 @@ def get_all_tweets_from_day(date, candidate='Trump'):
             time.sleep(90)
             continue
     
+    print(f"All done with {candidate}'s tweets.")
+    
 get_all_tweets_from_day('2020-11-02', candidate='Biden')
 time.sleep(10)
 get_all_tweets_from_day('2020-11-02', candidate='Trump')
