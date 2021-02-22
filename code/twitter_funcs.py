@@ -30,7 +30,7 @@ def get_user_features(user_id):
 
     try:
         # Get user information from screen name
-        user = api.get_user_id(user_id)
+        user = api.get_user(user_id)
 
         # account features to return for predicton
         account_age_days = (datetime.now() - user.created_at).days
@@ -74,7 +74,7 @@ def get_user_features(user_id):
         ]
 
     except:
-        return "User not found"
+        return np.nan
 
     return account_features if len(account_features) == 14 else f"User not found"
 
@@ -124,7 +124,7 @@ def bot_proba(user_id):
     """
     user_features = get_user_features(user_id)
 
-    if user_features == "User not found":
+    if user_features == np.nan:
         return np.nan
     else:
         user = np.matrix(user_features)
