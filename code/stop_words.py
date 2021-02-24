@@ -179,6 +179,19 @@ spanish_stop_words = [
     'ha',
     'presidente',
     'ya'
+    'la',
+    'si',
+    'al',
+    'ha',
+    'ya',
+    'ser',
+    'gane',
+    'solo',
+    'blanca',
+    'yo',
+    'usa',
+    'hay',
+    'bien'
 ]
 
 stop_words = english_stop_words + spanish_stop_words
