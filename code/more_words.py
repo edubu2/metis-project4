@@ -12,6 +12,12 @@ more_words = [
     'americans',
     'cnn',
     'abc',
+    'wsj',
+    'wallstreetjournal'
+    'usps',
+    'karen',
+    'coronavirus',
+    'chinavirus',
     'msnbc',
     'nbc',
     'bbc',
