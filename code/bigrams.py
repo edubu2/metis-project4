@@ -119,6 +119,7 @@ bigrams = [
     (r"tik tok", "tiktok"),
     (r"legal votes?", "legalvote"),
     (r"law enforcement", "lawenforcement"),
+    (r"realdonaldtrump", "donaldtrump"),
     (r"president trump", "donaldtrump"),
     (r"president donald trump", "donaldtrump"),
     (r"vice president mike pence", "mikepence"),
