@@ -178,6 +178,10 @@ stop_words = [
     'terrible',
     'hope',
     'pour',
+    'democrat',
+    'republican',
+    'mean',
+    'give',
     'favor',
     'pro',
     'dar',
@@ -235,6 +239,6 @@ stop_words = [
     'bien',
     'put',
     'didnt',
-    'let'
+    'let',
 ]
 
