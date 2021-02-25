@@ -77,6 +77,7 @@ bigrams = [
     (r'hispanic votes?', 'hispanicvote'),
     (r'people of color', 'peopleofcolor'),
     (r'corrupt politicians?', 'corruptpolitician'),
+    (r'popular vote', 'popularvote'),
     (r'whole world', 'wholeworld'),
     (r'last elections?', 'lastelection'),
     (r'stock market', 'stockmarket'),
