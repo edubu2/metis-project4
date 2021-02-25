@@ -1,10 +1,12 @@
-english_stop_words = [
+stop_words = [
     'people',
     'like',
     'even',
     'need',
     'said',
     'see',
+    'han',
+    'la',
     'let',
     'day',
     'today',
@@ -157,11 +159,24 @@ english_stop_words = [
     'ad',
     'gain',
     'men',
-    'women'    
-]
-
-
-spanish_stop_words = [
+    'women'
+    'ma',
+    'do',
+    'he',
+    'la',
+    'mi',
+    'te',
+    'ante',
+    'persona',
+    'ni',
+    'no',
+    'contra',
+    'cero',
+    'han',
+    'sea',
+    'van',
+    'hoy',
+    'dan'
     'de',
     'da',
     'se',
@@ -191,7 +206,9 @@ spanish_stop_words = [
     'yo',
     'usa',
     'hay',
-    'bien'
+    'bien',
+    'put',
+    'didnt',
+    'let'
 ]
 
-stop_words = english_stop_words + spanish_stop_words
