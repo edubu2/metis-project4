@@ -1,6 +1,7 @@
 bigrams = [
     (r"make ?america ?great ?again", "maga"),
     (r"god bless america", "godblessamerica"),
+    (r"if.*vote ?f?o?r? ?.*trump", "ifyouvote4trump"),
     (r"corona ?virus", "covid"),
     (r"covid ?death ?tolls?", "coviddeathtoll"),
     (r"covid deaths?", "coviddeaths"),

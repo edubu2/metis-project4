@@ -118,6 +118,8 @@ def bot_or_not(user_id):
         return "Bot" if prediction == 1 else np.nan
 
 
+
+
 def bot_proba(user_id):
     """
     Takes in a twitter handle and provides probability of whether or not the user is a bot
