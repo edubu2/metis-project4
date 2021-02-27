@@ -12,7 +12,7 @@ import re
 import time
 
 # Get fully-trained XGBoostClassifier model
-with open("bot_model.pick", "rb") as read_file:
+with open("pickle/bot_model.pick", "rb") as read_file:
     xgb_model = pickle.load(read_file)
 
 # Set up connection to Twitter API
