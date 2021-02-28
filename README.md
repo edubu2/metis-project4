@@ -41,7 +41,7 @@ The file structure is explained as follows:
 
 * `/code/`: contains all code used for the project. If you are planning on reproducing locally, run the below notebooks (in order). You may need to create empty directories and install any necessary libraries along the way.
   * `scrape_bot_probas.ipynb`:
-    * Use
+    * Use this only to expand on `/data/user_stats.csv` and classify more users (In addition to the 30k already there).
   * `get_tweets.ipynb`: this notebook uses the `Twint` Python library to pull all tweets from Oct 1 - Nov 2, 2020 that contain the words `trump` and `biden`
   * `aggregate_tweets.ipynb`: combines the .csv files generated from `clean_tweets.ipynb` into one DataFrame
   * `clean_tweets.ipynb`: pre-processes tweets (stop word removal, n-grams, lemmatization)
@@ -50,9 +50,10 @@ The file structure is explained as follows:
     * \*\* Non-Negative Matrix Factorization
   * `topic_naming.ipynb`: analysis of our topic clusters & assigning names to each cluster
   * `bots.ipynb`: pulls user-level bot probabilities into the tweets data and analyze the results
-    * data visualization with `matplotlib` and `seaborn` here
-  * `/code/custom-words/` contains three files:
+    * data visualizations with `matplotlib` and `seaborn` here
+  * `/code/custom_words/` contains three files:
     * `bigrams.py`: contains a list of tuples that combine multi-word phrases into one term
+      * example: `(r"white house", "whitehouse")` will replace all occurrences of 'white house' with 'whitehouse' (all words pre-processed before this is implemented)
     * `more_words.py`: additional words (no need to repeat from `bigrams`) that should not be filtered out during pre-processing
     * `stop_words.py`: additional stop words that should be excluded during pre-processing
 
@@ -66,9 +67,16 @@ Here are the resulting topics from NMF matrix defactorization (*k=30*)
 
 ![Tableau](https://github.com/edubu2/metis-project4/blob/main/etc/topic_viz_n30.png)
 
-For more information about how these topics were generated, and some of the most relevant words and documents for each topic, check out my blog post (in progress).
+* The empty boxes in the above figure are as follows:
+  * #breakingnews, #healthcareforall, #debate, #registertovote
+
+For more information about how these topics were generated, and some of the most relevant words and documents for each topic, check out my blog post [here](https://edubu2.medium.com/investigating-the-impact-of-twitter-bots-on-the-2020-u-s-elections-political-discourse-173638f4b95c)
+
 
 ___
-
-Sources
+## Sources
+* Chris Doenlen's `Twitter Bot Detection`
+  * Links:
+    * [Blog post](https://medium.com/the-innovation/twitter-bot-or-not-cc2ad52b36ba)
+    * [GitHub repository](https://github.com/scrapfishies/twitter-bot-detection)
 
