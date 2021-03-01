@@ -1,6 +1,6 @@
 # Metis Data Science Bootcamp | Project 4
 
-## Analyzing the Impact of Twitter Bots on the U.S. Presidential Election's Political Discourse 
+## Investigating the Impact of Twitter Bots on the U.S. Presidential Election's Political Discourse 
 
 For a good summary of this project, check out my blog [here](https://edubu2.medium.com/investigating-the-impact-of-twitter-bots-on-the-2020-u-s-elections-political-discourse-173638f4b95c)
 
